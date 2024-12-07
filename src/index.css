@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'StratosSkyeng';
+  src: url('/fonts/StratosSkyeng-Regular.woff2') format('woff2'),
+       url('/fonts/StratosSkyeng-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'StratosSkyeng';
+  src: url('/fonts/StratosSkyeng-Bold.woff2') format('woff2'),
+       url('/fonts/StratosSkyeng-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+     .scrollbar::-webkit-scrollbar {
+       width: 6px;
+     }
+     
+     .scrollbar::-webkit-scrollbar-track {
+       background: #F7F7F7;
+       border-radius: 10px;
+     }
+     
+     .scrollbar::-webkit-scrollbar-thumb {
+       background-color: #000000;
+       border-radius: 10px;
+       border: 3px solid;
+     }
+   }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

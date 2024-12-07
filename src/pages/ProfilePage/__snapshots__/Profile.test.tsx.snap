@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component renders correctly when the user is logged in 1`] = `
+<DocumentFragment>
+  <section
+    class="flex mobile:flex-col mobile:items-center gap-[33px] w-[100%] p-[30px] mt-[40px] mb-[60px] rounded-[30px] shadow-[0px_4px_67px_-12px_rgba(0,0,0,0.13)]"
+  >
+    <img
+      class="w-[197px] h-[197px] rounded-[30px] mobile:w-[141px] mobile:h-[141px]"
+      loading="lazy"
+      src="/images/profile.png"
+    />
+    <div
+      class="flex flex-col gap-[30px] mobile:w-full"
+    >
+      <h2
+        class="text-left font-roboto text-[32px] font-medium leading-[35.2px] flex items-center"
+      >
+        John Doe
+        <button
+          class="ml-2 text-gray"
+        >
+          ✎
+        </button>
+      </h2>
+      <div
+        class="flex flex-col gap-[10px] text-left font-roboto text-[18px] font-normal leading-[19.8px]"
+      >
+        <p>
+          Логин: johndoe@example.com
+        </p>
+        <p>
+          Пароль: ********
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap gap-[10px] mobile:flex-col"
+      >
+        <button
+          class="w-[192px] mobile:w-full h-[52px] rounded-btnRad bg-green"
+        >
+          <p
+            class="text-black font-roboto text-[18px] font-normal leading-[19.8px]"
+          >
+            Изменить пароль
+          </p>
+        </button>
+        <button
+          class="w-[192px] mobile:w-full h-[52px] rounded-btnRad bg-white border border-black"
+        >
+          <p
+            class="text-black font-roboto text-[18px] font-normal leading-[19.8px]"
+          >
+            Выйти
+          </p>
+        </button>
+      </div>
+    </div>
+    <div
+      role="dialog"
+    />
+  </section>
+</DocumentFragment>
+`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressModal Snapshot renders nothing when the modal is closed 1`] = `<DocumentFragment />`;
+
+exports[`ProgressModal Snapshot renders the modal correctly when open 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div
+      class="bg-white shadow-lg rounded-[30px] p-10 w-full max-w-[426px]"
+    >
+      <h2
+        class="text-[32px] font-normal mb-[48px] text-center"
+      >
+        Мой прогресс
+      </h2>
+      <form
+        class="flex flex-col gap-[20px]"
+      >
+        <div
+          class="flex flex-col gap-[10px]"
+        >
+          <label
+            class="text-[18px]"
+          >
+            Сколько раз вы сделали Push Ups?
+          </label>
+          <input
+            class="border border-[#D0CECE] rounded-[8px] p-[16px]"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            placeholder="0"
+            type="text"
+            value="20"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-[10px]"
+        >
+          <label
+            class="text-[18px]"
+          >
+            Сколько раз вы сделали Squats?
+          </label>
+          <input
+            class="border border-[#D0CECE] rounded-[8px] p-[16px]"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            placeholder="0"
+            type="text"
+            value="10"
+          />
+        </div>
+        <button
+          class="mt-[34px] bg-[#BCEC30] text-black rounded-[46px] py-[16px] px-[26px]"
+          type="submit"
+        >
+          Сохранить
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

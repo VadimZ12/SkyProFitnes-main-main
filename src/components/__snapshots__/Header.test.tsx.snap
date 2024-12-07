@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders correctly when the user is logged in 1`] = `
+<DocumentFragment>
+  <header
+    class="flex justify-between mt-[50px] items-center"
+  >
+    <a
+      class="flex flex-col gap-[15px]"
+      href="/"
+    >
+      <img
+        alt="logo"
+        class="w-[220px] h-[35px]"
+        loading="lazy"
+        src="test-file-stub"
+      />
+      <p
+        class="font-roboto text-[18px] font-normal leading-[19.8px] text-left text-gray mobile:hidden"
+      >
+        Онлайн-тренировки для занятий дома
+      </p>
+    </a>
+    <div
+      class="relative"
+    >
+      <div
+        class="flex items-center cursor-pointer gap-5"
+      >
+        <img
+          alt="user avatar"
+          class="w-[41.67px] h-[41.67px] p-1 rounded-full bg-[#D9D9D9] object-cover"
+          src="/images/profile.png"
+        />
+        <p
+          class="font-roboto text-[24px] font-normal leading-[110%] text-black"
+        >
+          John Doe
+        </p>
+        <svg
+          class="w-[13px] h-[13px]"
+          fill="none"
+          viewBox="0 0 14 7"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 1L7 6L13 1"
+            stroke="black"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header component renders correctly when the user is not logged in 1`] = `
+<DocumentFragment>
+  <header
+    class="flex justify-between mt-[50px] items-center"
+  >
+    <a
+      class="flex flex-col gap-[15px]"
+      href="/"
+    >
+      <img
+        alt="logo"
+        class="w-[220px] h-[35px]"
+        loading="lazy"
+        src="test-file-stub"
+      />
+      <p
+        class="font-roboto text-[18px] font-normal leading-[19.8px] text-left text-gray mobile:hidden"
+      >
+        Онлайн-тренировки для занятий дома
+      </p>
+    </a>
+    <div
+      class="relative"
+    >
+      <button
+        class="font-roboto h-[52px] font-normal text-lg leading-[110%] text-center rounded-[46px] transition-all duration-300 ease-in-out cursor-pointer bg-primary text-black hover:bg-primary-hover active:bg-black active:text-white w-[103px] h-[52px]"
+        type="button"
+      >
+        Войти
+      </button>
+    </div>
+  </header>
+</DocumentFragment>
+`;
