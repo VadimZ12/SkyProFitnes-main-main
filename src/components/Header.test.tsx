@@ -15,7 +15,6 @@ describe('Header component', () => {
 	const mockOnLoginClick = jest.fn()
 
 	beforeAll(() => {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		;(global as any).importMeta = {
 			env: {
 				VITE_FIREBASE_API_KEY: 'mock-api-key',

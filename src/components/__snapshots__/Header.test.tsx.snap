@@ -33,7 +33,7 @@ exports[`Header component renders correctly when the user is logged in 1`] = `
           src="/images/profile.png"
         />
         <p
-          class="font-roboto text-[24px] font-normal leading-[110%] text-black"
+          class="block mobile:hidden font-roboto text-[24px] font-normal leading-[110%] text-black"
         >
           John Doe
         </p>

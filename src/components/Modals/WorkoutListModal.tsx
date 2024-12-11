@@ -109,19 +109,6 @@ const WorkoutListModal: React.FC<WorkoutListModalProps> = ({
 
   if (!isOpen) return null;
 
-  // function startWorkout() {
-  //   let workoutNumber = 0;    
-  //   for (const key in workoutProgress) {
-  //     workoutNumber++;      
-  //     if (!workoutProgress[key]) {
-  //       navigate(`/training/${key}`, { 
-  //         state: { course, workoutNumber } 
-  //       });
-  //       return;
-  //     }
-  //   }
-  //   navigate('/user');
-  // }
 
   return (
     <>

@@ -7,6 +7,7 @@ import ProgressModal from '../../components/Modals/ProgressModal';
 import InfoModal from '../../components/Modals/infoModal';
 import { database } from '../../config/firebase';
 import { ref, set, get } from "firebase/database";
+import { getValidProgress} from '../../utils/validateProgress';
 
 function TrainingPage() {
   const { id } = useParams<{ id: string }>();
@@ -83,7 +84,6 @@ function TrainingPage() {
   }, [user, id, workout]);
 
   const handleOpenProgressModal = () => {
-    console.log(workout) //DEV
     setIsProgressModalOpen(true);
   };
 
@@ -94,12 +94,7 @@ function TrainingPage() {
   const handleSaveProgress = async (newProgress: { [key: string]: number }) => {
     if (!user || !id) return;
     try {
-      const validProgress = Object.entries(newProgress).reduce((acc, [key, value]) => {
-        if (!isNaN(value) && isFinite(value)) {
-          acc[key] = Math.max(0, Math.min(value, 100));
-        }
-        return acc;
-      }, {} as { [key: string]: number });
+      const validProgress = getValidProgress(newProgress);
 
       const progressRef = ref(database, `userProgress/${user.uid}/${id}`);
       await set(progressRef, validProgress);
