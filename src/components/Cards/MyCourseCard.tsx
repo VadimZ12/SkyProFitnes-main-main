@@ -5,7 +5,7 @@ import Level from "./Level";
 import WorkoutListModal from '../Modals/WorkoutListModal';
 import { Course, Workout } from '../../types/interfaces';
 import { database } from '../../config/firebase';
-import { ref, get, set } from "firebase/database";
+import { ref, get, set} from "firebase/database";
 import { useAuth } from '../../hooks/useAuth';
 
 interface MyCourseCardProps {
@@ -34,6 +34,13 @@ const MyCourseCard: React.FC<MyCourseCardProps> = ({ course, onCourseRemoved }) 
           const progressRef = ref(database, `userProgress/${user.uid}/${workoutId}`);
           const progressSnapshot = await get(progressRef);
           const progressData = progressSnapshot.val() || {};
+          console.log('progressData', progressData, workoutData);
+
+          const progressUserRef = ref(database, `userCourses/${user.uid}`);
+          const progressUserData = (await get(progressUserRef)).val();
+          console.log('удаление', progressUserData);
+
+          
 
           if (workoutData && workoutData.exercises) {
             let workoutCompleted = true;
@@ -81,6 +88,12 @@ const MyCourseCard: React.FC<MyCourseCardProps> = ({ course, onCourseRemoved }) 
           const courses = snapshot.val();
           const updatedCourses = courses.filter((id: string) => id !== course._id);
           await set(userCoursesRef, updatedCourses);
+          const progressPromises = course.workouts.map(async(workoutId) => {
+           const workoutProgressRef = ref(database, `userProgress/${user.uid}/${workoutId}`)
+           await set(workoutProgressRef, null)
+          })
+          await Promise.all(progressPromises)
+          
           if (onCourseRemoved) {
             onCourseRemoved();
           }
@@ -91,11 +104,21 @@ const MyCourseCard: React.FC<MyCourseCardProps> = ({ course, onCourseRemoved }) 
     }
   };
 
+  const courseToImage : Record <string, string>  = {
+    'Yoga' : 'YogaCard.png', 
+    'Stretching' : 'StretchingCard.png',
+    'DanceFitness' : 'DanceFitnessCard.png',
+    'StepAirobic' : 'StepAirobicCard.png',
+    'BodyFlex' : 'BodyFlexCard.png',
+  }
+
+  const cardImg = (courseName: string) : string => courseToImage[courseName]
+
   return (
     <div className="w-full pb-[15px] rounded-[30px] shadow-[0px_4px_67px_-12px_rgba(0,0,0,0.13)]">
       <div className="relative" onClick={() => navigate(`/course/${course._id}`)}>
         <img 
-          src={`/images/${course.nameEN}.png`}
+          src={`/images/${cardImg(course.nameEN)}`}
           alt={course.nameRU} 
           className="w-full h-[325px] rounded-[30px] object-cover"
           loading="lazy"
